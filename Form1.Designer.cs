@@ -103,7 +103,7 @@ namespace WinForm_Test
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TileMaps.NET";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
