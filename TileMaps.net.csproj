@@ -6,6 +6,7 @@
     <RootNamespace>TileMaps.net</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>TileMaps.net</AssemblyName>
+    <StartupObject>WinForm_Test.Program</StartupObject>
   </PropertyGroup>
 
 </Project>

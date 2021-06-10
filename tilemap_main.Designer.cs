@@ -1,7 +1,7 @@
 ﻿
 namespace WinForm_Test
 {
-    partial class Form1
+    partial class tilemap_main
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,7 +33,9 @@ namespace WinForm_Test
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chosen_char = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -77,7 +79,12 @@ namespace WinForm_Test
             this.dataGridView1.Size = new System.Drawing.Size(745, 418);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
             // Column1
             // 
@@ -90,23 +97,37 @@ namespace WinForm_Test
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.chosen_char);
             this.panel1.Location = new System.Drawing.Point(774, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(239, 489);
             this.panel1.TabIndex = 1;
             // 
-            // Form1
+            // chosen_char
+            // 
+            this.chosen_char.AutoSize = true;
+            this.chosen_char.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.chosen_char.Font = new System.Drawing.Font("C64 Pro Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chosen_char.Location = new System.Drawing.Point(0, 471);
+            this.chosen_char.Name = "chosen_char";
+            this.chosen_char.Size = new System.Drawing.Size(175, 14);
+            this.chosen_char.TabIndex = 0;
+            this.chosen_char.Text = "Chosen Char:";
+            // 
+            // tilemap_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 504);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "TileMaps.NET";
+            this.Name = "tilemap_main";
+            this.Text = "TileMap";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,6 +137,7 @@ namespace WinForm_Test
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label chosen_char;
     }
 }
 
